@@ -1,4 +1,10 @@
-<h1>GOALS</h1>
-<ul>
-  <li *ngFor='let quote of quotes'>{{quote.saying}}</li>
-</ul>
+<h1>QUOTES</h1>
+
+  <div *ngFor='let quote of quotes; let i = index'>
+    <p>{{quote.saying}}</p>
+    <p> ~ {{quote.author}}</p>
+    <button (click)='toggleDetails(i)'>More Details</button>
+    <button>Upvote</button>
+    <button>Downvote</button>
+    <app-quote-details *ngIf='quote.showDetails' [quote]='quote'></app-quote-details>
+  </div>
