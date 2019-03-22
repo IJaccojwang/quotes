@@ -8,7 +8,7 @@ import { Comment } from '../comment'
 })
 export class CommentComponent implements OnInit {
   comments = [
-    new Comment(1, 'Cool', 'Ian')
+    new Comment(1, 'Cool', 'Ian', new Date(2018,6,19))
   ]
 
   constructor() { }

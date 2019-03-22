@@ -1,8 +1,6 @@
 export class Quote{
   public showDetails: boolean;
-  public inUnwanted: boolean;
-  constructor(public id:number, public saying: string, public author: string, public submitter: string, public completeDate: Date) {
+  constructor(public id:number, public saying: string, public author: string, public firstName: string,public lastName: string, public completeDate: Date) {
     this.showDetails = false
-    this.isUnwanted = false
   }
 }
