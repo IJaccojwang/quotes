@@ -10,6 +10,7 @@ import { QuoteDetailsComponent } from './quote-details/quote-details.component';
 import { ElapsedPipe } from './elapsed.pipe';
 import { CommentFormComponent } from './comment-form/comment-form.component';
 import { QuoteFormComponent } from './quote-form/quote-form.component';
+import { MostVotesDirective } from './most-votes.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { QuoteFormComponent } from './quote-form/quote-form.component';
     QuoteDetailsComponent,
     ElapsedPipe,
     CommentFormComponent,
-    QuoteFormComponent
+    QuoteFormComponent,
+    MostVotesDirective
   ],
   imports: [
     BrowserModule,

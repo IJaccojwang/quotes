@@ -2,7 +2,7 @@
   <div *ngFor='let quote of quotes; let i = index'>
     <p>{{quote.saying}}</p>
     <p> ~ {{quote.author}}</p>
-    <p>Votes: {{quote.votes}}</p>
+    <p appMostVotes>Votes: {{quote.votes}}</p>
     <p>Upvotes: {{quote.up}} Downvotes: {{quote.down}}</p>
     <button (click)='toggleDetails(i)'>More Details</button>
     <button (click)='deleteQuote(i)'>Delete</button>
