@@ -9,7 +9,7 @@ import { Quote } from '../quote'
 export class QuoteDetailsComponent implements OnInit {
   @Input() quote: Quote;
   @Input() date: Quote;
-
+  
   constructor() { }
 
   ngOnInit() {
