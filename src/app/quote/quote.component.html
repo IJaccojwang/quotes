@@ -1,15 +1,21 @@
 <h1>QUOTES</h1>
-  <div appMostVotes *ngFor='let quote of quotes; let i = index'>
-    <p>{{quote.saying}}</p>
-    <p> ~ {{quote.author}}</p>
-    <p>Votes: {{quote.votes}}</p>
-    <p>Upvotes: {{quote.up}} Downvotes: {{quote.down}}</p>
-    <button (click)='toggleDetails(i)'>More Details</button>
-    <button (click)='deleteQuote(i)'>Delete</button>
-    <button (click)='upVote(i)'>Upvote</button>
-    <button (click)='downVote(i)'>Downvote</button>
-    <div *ngIf='quote.showDetails'>
-          <app-quote-details  [quote]='quote' [date]='date'></app-quote-details>
+  <div *ngFor='let quote of quotes; let i = index'>
+    <div class="row">
+      <div class="col-9">
+        <p>{{quote.saying}}</p>
+        <p> ~ {{quote.author}}</p>
+        <button (click)='toggleDetails(i)'>More Details</button>
+        <button (click)='deleteQuote(i)'>Delete</button>
+        <div *ngIf='quote.showDetails'>
+              <app-quote-details  [quote]='quote' [date]='date'></app-quote-details>
+        </div>
+      </div>
+      <div class="col-3">
+        <p>Votes: {{quote.votes}}</p>
+        <p>Upvotes: {{quote.up}} Downvotes: {{quote.down}}</p>
+        <button (click)='upVote(i)'>Up</button>
+        <button (click)='downVote(i)'>Down</button>
+      </div>
     </div>
   </div>
   <div class="row">

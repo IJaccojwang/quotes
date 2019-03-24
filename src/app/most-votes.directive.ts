@@ -1,12 +1,12 @@
-import { Directive, ElementRef } from '@angular/core';
-import { QuoteComponent } from '../app/quote/quote.component'
+import { Directive, ElementRef} from '@angular/core';
 
 @Directive({
   selector: '[appMostVotes]'
 })
 export class MostVotesDirective {
+
   constructor(private elem:ElementRef){
-    this.elem.nativeElement.style.backgroundColor = 'yellow';
+      this.elem.nativeElement.style.backgroundColor = 'yellow';
   }
 
 }
