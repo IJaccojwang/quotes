@@ -1,23 +1,29 @@
-<h1>QUOTES</h1>
+<div class="header">
+  <h1 id="title">QUOTES</h1>
+  <p>Home of all wisdom</p>
+</div>
   <div *ngFor='let quote of quotes; let i = index'>
-    <div class="row">
-      <div class="col-9">
-        <p>{{quote.saying}}</p>
-        <p> ~ {{quote.author}}</p>
-        <button (click)='toggleDetails(i)'>More Details</button>
-        <button (click)='deleteQuote(i)'>Delete</button>
-        <div *ngIf='quote.showDetails'>
-              <app-quote-details  [quote]='quote' [date]='date'></app-quote-details>
+    <div class="card" id="qcard">
+      <div class="row">
+        <div class="col-9">
+          <p>{{quote.saying}}</p>
+          <p id="aut"> ~ {{quote.author}}</p>
+          <button (click)='toggleDetails(i)' class="btn btn-dark">More Details</button>
+          <button (click)='deleteQuote(i)' class="btn btn-dark">Delete</button>
+          <div *ngIf='quote.showDetails'>
+                <app-quote-details  [quote]='quote' [date]='date'></app-quote-details>
+          </div>
         </div>
-      </div>
-      <div class="col-3">
-        <p>Votes: {{quote.votes}}</p>
-        <p>Upvotes: {{quote.up}} Downvotes: {{quote.down}}</p>
-        <button (click)='upVote(i)'>Up</button>
-        <button (click)='downVote(i)'>Down</button>
+        <div class="col-3">
+          <div class="card" id="vote">
+            <p>{{quote.votes}}</p>
+            <button (click)='upVote(i)' class="btn btn-success">Up: {{quote.up}} </button>
+            <button (click)='downVote(i)' class="btn btn-danger">Down: {{quote.down}}</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="row">
+  <div class="card">
     <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
   </div>

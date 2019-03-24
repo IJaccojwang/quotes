@@ -1,50 +1,48 @@
 <div class="container-fluid">
   <h1>ADD QUOTE</h1>
   <div class="row">
-    <form (ngSubmit)='submitQuote()' #quoteForm='ngForm'>
-      <div class="form-group row">
-        <div class="col">
-          <label for="firstName"> First Name</label>
-          <input type="text" placeholder="First name" class="form-control" id="firstName" [(ngModel)]="newQuote.firstName" name="firstName" #firstName='ngModel'  required>
-        </div>
-        <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">
-          <p>Required</p>
-        </div>
-        <div class="col">
-          <label for="lasttName">Last Name</label>
-          <input type="text" placeholder="Last name" class="form-control" id="lastName" [(ngModel)]="newQuote.lastName" name="lastName"  #lastName='ngModel' required>
-        </div>
-        <div [hidden]="lastName.valid || lastName.pristine" class="alert alert-danger">
-          <p>Required</p>
-        </div>
-      </div>
+    <div class="col-2">
+
+    </div>
+    <div class="col-8">
+      <form (ngSubmit)='submitQuote()' #quoteForm='ngForm'>
         <div class="form-group row">
-          <div class="col-7">
-            <label for="saying">Quote</label>
-            <input type="text" placeholder="First name" class="form-control" id="saying" [(ngModel)]="newQuote.saying" name="saying"  #saying='ngModel' required>
+          <div class="col">
+            <label for="firstName"> First Name</label>
+            <input type="text" placeholder="First name" class="form-control" id="firstName" [(ngModel)]="newQuote.firstName" name="firstName" #firstName='ngModel'  required>
           </div>
-          <div [hidden]="saying.valid || saying.pristine" class="alert alert-danger">
+          <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">
             <p>Required</p>
           </div>
           <div class="col">
-            <label for="author">Author</label>
-            <input type="text" placeholder="First name" class="form-control" id="author" [(ngModel)]="newQuote.author" name="author"  #author='ngModel' required>
+            <label for="lasttName">Last Name</label>
+            <input type="text" placeholder="Last name" class="form-control" id="lastName" [(ngModel)]="newQuote.lastName" name="lastName"  #lastName='ngModel' required>
           </div>
-          <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
+          <div [hidden]="lastName.valid || lastName.pristine" class="alert alert-danger">
             <p>Required</p>
           </div>
         </div>
-        <div class="form-group row">
-          <div class="col">
-            <label for="date">Date</label>
-            <input type="date" placeholder="First name" class="form-control" id="date" [(ngModel)]="newQuote.completeDate" name="date"  #date='ngModel' required>
+          <div class="form-group row">
+            <div class="col">
+              <label for="saying">Quote</label>
+              <input type="text" placeholder="Quote" class="form-control" id="saying" [(ngModel)]="newQuote.saying" name="saying"  #saying='ngModel' required>
+            </div>
+            <div [hidden]="saying.valid || saying.pristine" class="alert alert-danger">
+              <p>Required</p>
+            </div>
+            <div class="col">
+              <label for="author">Author</label>
+              <input type="text" placeholder="Author" class="form-control" id="author" [(ngModel)]="newQuote.author" name="author"  #author='ngModel' required>
+            </div>
+            <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
+              <p>Required</p>
+            </div>
           </div>
-          <div [hidden]="date.valid || date.pristine" class="alert alert-danger">
-            <p>Required</p>
-          </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Add Quote</button>
-        Display {{newQuote.firstName}}
-    </form>
+          <button type="submit" class="btn btn-primary">Add Quote</button>
+      </form>
+    </div>
+    <div class="col-2">
+
+    </div>
   </div>
 </div>
