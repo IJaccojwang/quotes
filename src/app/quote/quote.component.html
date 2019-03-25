@@ -11,9 +11,11 @@
     <div appMostVotes class="card" id="highest">
       <div class="col-9">
         <h1>HIGHEST VOTED</h1>
-        <p>{{highestVote}} vote(s)</p>
         <p>{{highestsaying}}</p>
         <p> ~ {{highestauthor}}</p>
+        <div class="card" id="vote">
+          <p>{{highestVote}} vote(s)</p>
+        </div>
       </div>
   </div>
     <div *ngFor='let quote of quotes; let i = index' id="view">
