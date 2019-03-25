@@ -6,9 +6,16 @@
     <a href="#add">Add Quotes</a>
   </nav>
 </div>
-<p class="card" appMostVotes>Quote with most votes has {{highestVote}} votes</p>
 <div class="row">
   <div class="col-md-7">
+    <div appMostVotes class="card" id="highest">
+      <div class="col-9">
+        <h1>HIGHEST VOTED</h1>
+        <p>{{highestVote}} vote(s)</p>
+        <p>{{highestsaying}}</p>
+        <p> ~ {{highestauthor}}</p>
+      </div>
+  </div>
     <div *ngFor='let quote of quotes; let i = index' id="view">
       <div class="card" id="qcard">
         <div class="row">

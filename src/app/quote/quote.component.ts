@@ -16,11 +16,15 @@ export class QuoteComponent implements OnInit {
   ]
 
   highestVote: number = 0
+  highestsaying: string
+  highestauthor: string
   highlight() {
     this.highestVote = 0;
     for(var u = 0; u < this.quotes.length; u++){
       if(this.quotes[u].votes > this.highestVote) {
         this.highestVote = this.quotes[u].votes;
+        this.highestsaying = this.quotes[u].saying;
+        this.highestauthor = this.quotes[u].author;
       }
     }
   }

@@ -41,3 +41,6 @@ nav a:hover{
   margin-left: 2%;
   border: 2px solid black;
 }
+#highest{
+  font-size: 150%;
+}
