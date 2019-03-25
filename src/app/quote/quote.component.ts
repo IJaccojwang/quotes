@@ -7,13 +7,23 @@ import { Quote } from '../quote'
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent implements OnInit {
-  public quotes = [
+   quotes = [
     new Quote(1, 'All that we are is the result of what we have thought.', 'Buddha', 'Ian', 'Dan', new Date(2018,6,19), 0, 0, 0),
     new Quote(2, 'I have no special talent. I am only passionately curious.', 'Albert Einstein', 'Don', 'Omondi', new Date(2019,1,3), 0, 0, 0),
     new Quote(3, 'If you judge people, you have no time to love them.', 'Mother Teresa', 'Faith', 'Maingi', new Date(2018,10,7), 0, 0, 0),
     new Quote(4, 'Wisely, and slow. They stumble that run fast.', 'William Shakespeare ', 'Brian', 'Mbugua', new Date(2018,5,6), 0, 0, 0),
     new Quote(5, 'I have no special talent. I am only passionately curious.', 'Albert Einstein', 'Michelle', 'Samuel', new Date(2019,2,13), 0, 0, 0)
   ]
+
+  highestVote: number = 0
+  highlight() {
+    this.highestVote = 0;
+    for(var u = 0; u < this.quotes.length; u++){
+      if(this.quotes[u].votes > this.highestVote) {
+        this.highestVote = this.quotes[u].votes;
+      }
+    }
+  }
 
 
   toggleDetails(index: number) {

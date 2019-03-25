@@ -6,6 +6,7 @@
     <a href="#add">Add Quotes</a>
   </nav>
 </div>
+<p class="card" appMostVotes>Quote with most votes has {{highestVote}} votes</p>
 <div class="row">
   <div class="col-md-7">
     <div *ngFor='let quote of quotes; let i = index' id="view">
@@ -23,8 +24,8 @@
           <div class="col-3">
             <div class="card" id="vote">
               <p>{{quote.votes}}</p>
-              <button (click)='upVote(i)' class="btn btn-success">Up: {{quote.up}} </button>
-              <button (click)='downVote(i)' class="btn btn-danger">Down: {{quote.down}}</button>
+              <button (click)='upVote(i); highlight()' class="btn btn-success">Up: {{quote.up}} </button>
+              <button (click)='downVote(i); highlight()' class="btn btn-danger">Down: {{quote.down}}</button>
             </div>
           </div>
         </div>
